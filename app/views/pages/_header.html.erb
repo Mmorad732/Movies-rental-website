@@ -1,0 +1,16 @@
+
+
+<% if logged_in? %>
+    <%if  session[:auth].equal? 1%>
+            <%= render 'pages/admin/header'%>
+    <%else%>
+            <%= render 'pages/user/header'%>
+    <%end%>
+            
+<% else %>
+        <%= render 'pages/notUser/header'%>
+<% end %>
+
+     
+      
+  

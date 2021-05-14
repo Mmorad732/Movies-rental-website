@@ -1,0 +1,4 @@
+<li class="nav-item">
+      <%=link_to session[:user_name] , user_path(User.find(session[:user_id])) ,:class => 'nav-link ' %>
+</li>
+<li class="nav-item"><%=link_to 'Logout' , session_path(session[:user_id]) ,method: :delete,:class => 'nav-link ' %></li>

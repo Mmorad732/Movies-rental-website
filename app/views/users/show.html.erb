@@ -1,0 +1,7 @@
+<%if  session[:auth].equal? 1%>
+        <%= render 'users/admin/show'%>
+<%else%>
+        <%= render 'users/user/show'%>
+<%end%>
+
+<!--%= render 'user_movies/dispmovies'%-->

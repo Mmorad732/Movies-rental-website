@@ -1,0 +1,13 @@
+<h1>Movies</h1>
+<p id="notice"><%= notice %></p>
+<div class="d-flex flex-wrap justify-content-center">
+<% @movies.each do |mov|%>
+	<div class ="border border-dark rounded w-25 p-3 m-2 ">
+		<h3> <%= mov.title %></h3>
+		<h4> <%= mov.year %></h4>
+		<%= link_to "Read More" ,movie_path(mov) , :class => 'btn btn-info'%>
+	</div><br>
+
+<%end%>
+</div>
+

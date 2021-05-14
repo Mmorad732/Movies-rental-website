@@ -1,0 +1,18 @@
+<h1>Log in</h1>
+<div class= "border border-dark rounded w-25 p-3 m-auto">
+<%= form_for(:session, url: sessions_path)  do |form| %>
+<div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, :class => 'form-control'%>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, :class => 'form-control' %>
+  </div><br>
+  <div class="actions">
+    <%= form.submit :submit, :class => 'btn btn-primary m-auto' %>
+  </div>
+</div>
+<%end%>
+</div>

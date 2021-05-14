@@ -1,0 +1,24 @@
+<h1>Add Movie</h1>
+<%= form_for :movie , url: movies_path , :html => {:class => "nifty_form"} do |f| %>
+<div class ="border border-dark rounded w-25 p-3 m-auto">
+	<p>
+		<%=f.label :title , "Movie title" %><br>
+		<%=f.text_field :title,:class => 'form-control w-50 p-2 m-auto'  %>
+	</p>
+	<p>
+		<%=f.label :genre , "Movie genre" %><br>
+		<%=f.text_field :genre, :class => 'form-control w-50 p-2 m-auto' %>
+	</p>
+	<p>
+		<%=f.label :duration,"Movie duration" %><br>
+		<%=f.text_field :duration , :class => 'form-control w-50 p-2 m-auto'%>
+	</p>
+	<p>
+		<%=f.label :year,"Movie release date" %><br>
+		<%= f.number_field :year, in: 1920..Date.current.year, step: 1, :class => 'form-control w-25 p-1 m-auto' %>
+	</p>
+	<p>
+		<%= f.submit :submit, :class => 'btn btn-primary m-auto'%>
+	</p>
+</div>
+<%end%>

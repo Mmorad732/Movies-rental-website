@@ -1,0 +1,8 @@
+<h1>Movies list</h1>
+<p id="notice"><%= notice %></p>
+<%@movies = Rental.where(" user_id = ?", params[:user_id]) %>
+<% @movies.each do |mov| %>
+	<%@movie = Movie.find(mov.movie_id)%>
+	<h4><%=@movie.title%>
+	<%= link_to "x" , [mov.user , mov]  ,:method => :delete%></h4>
+<% end %>

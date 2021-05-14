@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<h1>admin</h1>
+<p>
+ 
+  <strong>Firstname:</strong>
+  <%= @user.firstName  %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastName %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Authentication:</strong>
+  <%= @user.authentication %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<%= render 'users/admin/movies'%>
