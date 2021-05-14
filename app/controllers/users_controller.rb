@@ -35,11 +35,13 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         if logged_in?
-            format.html { redirect_to users_path, notice: "User was successfully created." }
-            format.json { render :show, status: :created, location: users_path }
+            @dest = users_path
         else
             log_in(@user)
-        end   	
+            @dest = root_path
+        end  
+        format.html { redirect_to @dest, notice: "User was successfully created." }
+        format.json { render :show, status: :created, location: @dest } 	
 
       else
         format.html { render :new, status: :unprocessable_entity }

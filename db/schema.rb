@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_064249) do
     t.string "lastName"
     t.string "email"
     t.string "password_digest"
-    t.integer "authentication"
+    t.integer "authentication", default: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
